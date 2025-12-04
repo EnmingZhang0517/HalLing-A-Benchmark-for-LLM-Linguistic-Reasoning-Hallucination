@@ -1,0 +1,28 @@
+FOL
+Open Question -  T: 65 F: 184 D: 0 FD: 0 (HR = 0.7389558233); Open Question Extend - T: 28 F: 100 D: 0 FD: 0(HR = 0.78125)
+MCQ - T: 90 F: 160 (HR = 0.64); Extend - T: 107 F: 21 (HR = 0.1640625)
+HR = 0.38005145
+
+Anaphoric
+MCQ: T: 134 , F: 35 (HR = 0.2071005917); MCQ Extend - T: 124, F: 26 (HR = 0.1733333333333); MCQ Faulty - T: 54, F: 96 (HR = 0.64)
+Open Question: T: 3  F: 165 D: 0 FD: 0 (HR = 0.9821428571); OQ Extend - T: 131 F: 19 D: 0 FD: 0 (HR = 0.1266666667); OQ Faulty - T: 43 F: 67 D: 0 FD: 0 (HR = 0.6090909091)
+HR = 0.4563890603
+
+	Ambiguity:
+	MCQ: T: 101,  F: 13 (HR = 0.1140350877)
+	Open Question: T: 36 F: 78 D:  FD:  (HR = 0.6842105263)
+	HR = 0.399122807
+
+	CE:
+	MCQ: T: 147,  F: 15 (HR = 0.)  77,  8 HR = 0.0941176471
+	Open Question: T: 37+50 F: 47+27 D:  FD:  (HR = 0.4596273292)
+	HR = 0.2768724881
+
+	Garden Paths:
+	MCQ: T: 84, F: 36 (HR = 0.3)
+	Open Question: T: 20 F: 98 D: 0 FD: 0 (HR = 0.8305084746)
+	HR = 0.5652542373
+
+	HR = 0.4137498441
+
+HR = 0.4715685320
