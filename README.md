@@ -1,6 +1,3 @@
-HalLing-A-Benchmark-for-LLM-Linguistic-Reasoning-Hallucination
-Overview
-
 This repository contains HalLing, a benchmark designed to evaluate how language models handle linguistic-reasoning tasks that commonly trigger hallucinations.
 The benchmark targets failure modes such as:
 
