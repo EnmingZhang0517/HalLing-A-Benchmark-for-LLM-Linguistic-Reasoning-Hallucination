@@ -29,22 +29,31 @@ HalLing evaluates LLMs on six core linguistic phenomena that require sophisticat
 ```
 HalLing/
 ├── README.md                 # This file
-├── Benchmark-test/           # Core benchmark datasets
-│   ├── Ambiguity.xlsx
-│   ├── Anaphoric.xlsx
-│   ├── Anaphoric extended.xlsx
-│   ├── Anaphoric_faulty.xlsx
-│   ├── Center embedding.xlsx
-│   ├── Garden path.xlsx
-│   ├── Quantifier.xlsx
-│   └── Quantifier_extend.xlsx
-├── Llama/                    # Llama model results
-├── Mistral/                  # Mistral model results
-├── Qwen/                     # Qwen model results
-└── GLM4/                     # GLM-4 model results
+├── LICENSE                   # MIT License
+├── requirements.txt          # Python dependencies
+├── .gitignore               # Git ignore rules
+├── data/                    # All datasets
+│   ├── benchmark-test/      # Core benchmark datasets
+│   │   ├── Ambiguity.xlsx
+│   │   ├── Anaphoric.xlsx
+│   │   ├── Anaphoric extended.xlsx
+│   │   ├── Anaphoric_faulty.xlsx
+│   │   ├── Center embedding.xlsx
+│   │   ├── Garden path.xlsx
+│   │   ├── Quantifier.xlsx
+│   │   └── Quantifier_extend.xlsx
+│   └── results/             # Model evaluation results
+│       ├── llama/           # Llama model results
+│       ├── mistral/         # Mistral model results
+│       ├── qwen/            # Qwen model results
+│       └── glm4/            # GLM-4 model results (if available)
+├── scripts/                 # Analysis scripts
+│   ├── analyze_results.py   # Main analysis script
+│   └── README.md            # Script documentation
+└── analysis_results.json    # Generated analysis output
 ```
 
-> **Note:** Each model branch contains results for that specific model across different linguistic phenomena and question types (MCQ = Multiple Choice Questions, OQ = Open Questions).
+> **Note:** All data is now consolidated in the `main` branch. Legacy branches (`Benchmark-test`, `Llama`, `Mistral`, `Qwen`, `GLM4`) are preserved for reference.
 
 ## 🗣️ Linguistic Phenomena Covered
 
@@ -78,32 +87,30 @@ Excel files (`.xlsx`) contain the following columns:
 
 ## 🚀 Usage
 
-### Accessing Data by Branch
-
-Each model's results are stored in separate branches:
+### Quick Start
 
 ```bash
 # Clone the repository
 git clone https://github.com/EnmingZhang0517/HalLing-A-Benchmark-for-LLM-Linguistic-Reasoning-Hallucination.git
 cd HalLing-A-Benchmark-for-LLM-Linguistic-Reasoning-Hallucination
 
-# Switch to a specific model branch
-git checkout Llama      # For Llama results
-git checkout Mistral    # For Mistral results
-git checkout Qwen       # For Qwen results
-git checkout GLM4       # For GLM-4 results
+# Install dependencies
+pip install -r requirements.txt
 
-# Core benchmark data
-git checkout Benchmark-test
+# Run analysis
+python scripts/analyze_results.py
 ```
 
-### Analyzing Results
+### Manual Analysis
 
 ```python
 import pandas as pd
 
-# Load a specific phenomenon
-df = pd.read_excel('Llama_MCQ_Ambiguity(done).xlsx')
+# Load benchmark data
+df = pd.read_excel('data/benchmark-test/Ambiguity.xlsx')
+
+# Load model results
+df = pd.read_excel('data/results/llama/Llama_MCQ_Ambiguity(done).xlsx')
 
 # Calculate accuracy
 accuracy = df['Correct'].mean()
